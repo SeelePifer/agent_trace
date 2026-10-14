@@ -1,0 +1,17 @@
+{
+  "name": "@agenttrace/toy-agent",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "start:fail": "tsx src/index-fail.ts"
+  },
+  "dependencies": {
+    "@agenttrace/sdk": "workspace:*",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
+  }
+}

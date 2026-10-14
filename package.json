@@ -1,0 +1,29 @@
+{
+  "name": "agenttrace",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "test": "turbo run test",
+    "test:integration": "pnpm --filter @agenttrace/api test:integration",
+    "lint": "pnpm lint:eslint && turbo run lint",
+    "lint:eslint": "eslint .",
+    "format": "prettier --check .",
+    "format:write": "prettier --write .",
+    "db:migrate": "pnpm --filter @agenttrace/api db:migrate",
+    "retention:run": "pnpm --filter @agenttrace/api retention:run"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.4.2",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.2"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20"
+  }
+}
