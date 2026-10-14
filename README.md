@@ -46,14 +46,14 @@ Small TypeScript SDK and debugger for AI agent runs: execution trees, token/late
 
 ## Environment
 
-| Variable                        | Description                |
-| ------------------------------- | -------------------------- |
-| `DATABASE_URL`                  | Postgres connection string |
-| `AGENTTRACE_API_KEY`            | Bearer token for API       |
-| `AGENTTRACE_API_URL`            | SDK / toy agent ingest URL |
-| `VITE_API_URL` / `VITE_API_KEY` | Web app API settings       |
-| `RETENTION_DAYS`                | TTL for `pnpm retention:run` |
-| `INGEST_RATE_LIMIT_PER_MINUTE`  | Per-key ingest rate limit    |
+| Variable                        | Description                     |
+| ------------------------------- | ------------------------------- |
+| `DATABASE_URL`                  | Postgres connection string      |
+| `AGENTTRACE_API_KEY`            | Bearer token for API            |
+| `AGENTTRACE_API_URL`            | SDK / toy agent ingest URL      |
+| `VITE_API_URL` / `VITE_API_KEY` | Web app API settings            |
+| `RETENTION_DAYS`                | TTL for `pnpm retention:run`    |
+| `INGEST_RATE_LIMIT_PER_MINUTE`  | Per-key ingest rate limit       |
 | `REDACT_CAPTURES`               | Server-side PII scrub on ingest |
 
 ## API (MVP)

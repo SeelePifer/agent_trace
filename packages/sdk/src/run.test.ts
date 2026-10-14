@@ -70,7 +70,9 @@ describe('run', () => {
     expect(llmSpan).toBeDefined();
     expect(nestedTool).toBeDefined();
     expect(nestedTool.parent_span_id).toBe(llmSpan.span_id);
-    expect(llmSpan.parent_span_id).toBe(body.spans.find((s: { kind: string }) => s.kind === 'agent').span_id);
+    expect(llmSpan.parent_span_id).toBe(
+      body.spans.find((s: { kind: string }) => s.kind === 'agent').span_id,
+    );
   });
 
   it("strips captures on success when capture is 'on_error'", async () => {
@@ -83,14 +85,11 @@ describe('run', () => {
       capture: 'on_error',
     });
 
-    await run(
-      { name: 'ok-agent', version: '1.0.0', input: { q: 'ok' } },
-      async ({ withLlm }) => {
-        await withLlm({ model: 'mock', messages: [] }, async () => ({
-          response: { role: 'assistant', content: 'hi' },
-        }));
-      },
-    );
+    await run({ name: 'ok-agent', version: '1.0.0', input: { q: 'ok' } }, async ({ withLlm }) => {
+      await withLlm({ model: 'mock', messages: [] }, async () => ({
+        response: { role: 'assistant', content: 'hi' },
+      }));
+    });
 
     await flush();
 
